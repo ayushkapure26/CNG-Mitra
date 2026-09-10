@@ -301,10 +301,11 @@ class GeminiAiHelper(
             put("systemInstruction", systemInstruction)
         }
 
-        val url = "$BASE_URL?key=$apiKey"
+        val url = BASE_URL
         val requestBody = requestJson.toString().toRequestBody(JSON_MEDIA_TYPE)
         val request = Request.Builder()
             .url(url)
+            .header("x-goog-api-key", apiKey)
             .post(requestBody)
             .build()
 

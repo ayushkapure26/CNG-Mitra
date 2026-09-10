@@ -1,22 +1,52 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# CNG मित्र
 
-# Run and deploy your AI Studio app
+Android companion for CNG drivers: vehicle records, refill diary, mileage and expense reports, pump discovery, and optional cloud backup.
 
-This contains everything you need to run your app locally.
+## Build
 
-View your app in AI Studio: https://ai.studio/apps/ff897983-d472-4687-b065-b6098b6a8c0f
+Use JDK 17 and Android Studio with SDK platform **Android 36.1** and Build Tools **36.0.0**. The repository includes the Gradle 9.3.1 wrapper, matching Android Gradle Plugin 9.1.1.
 
-## Run Locally
+```sh
+git clone https://github.com/ayushkapure26/CNG-Mitra.git
+cd CNG-Mitra
+./gradlew :app:assembleDebug :app:testDebugUnitTest
+```
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+On Windows use `gradlew.bat`. Android Studio can create your local SDK path in `local.properties`. Debug signing uses Android's automatically generated debug key.
 
+APK output: `app/build/outputs/apk/debug/app-debug.apk`.
+GitHub Actions builds and tests on pushes and pull requests; successful runs provide a **CNG-Mitra-debug-apk** artifact. This is a development APK, not a Play Store release.
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
-7. If you have already published your app in AI Studio, please [request upload key reset](https://support.google.com/googleplay/android-developer/answer/9842756#zippy=%2Crequest-an-upload-key-reset) in Google Play Console.
+## Features and service setup
+
+- **Guest Mode:** local vehicle and refill records, reports, and offline access; no login is required. New installations start with an empty personal diary; no fabricated vehicles or fuel expenses are inserted.
+- **Pump data:** bundled stations are sample data, not verified live prices, availability, or pressure. Confirm at the pump before travel.
+- **Google Maps:** copy `.env.example` to `.env` and configure `MAPS_API_KEY` with Android package/certificate restrictions.
+- **Firebase sign-in and backup:** register Android package `com.aistudio.cngtracker.cngpxz` in your Firebase project. Place its configuration in `app/google-services.json`, enable email/password and Google providers, and register your signing certificate fingerprints. Cloud actions require an authenticated Firebase account. Review `firestore.rules` and deploy them to your own project with `firebase deploy --only firestore:rules --project YOUR_PROJECT_ID`; this repository does not deploy backend services automatically.
+- **Gemini:** optional `GEMINI_API_KEY` in `.env`; without it the app uses offline tips. A key bundled in an APK can be extracted. Use a backend before distributing a production app with a shared paid key.
+
+No API keys, signing passwords, or Firebase credentials are provided. The default build works without private service configuration; those services remain unavailable until configured. Never commit `.env`, keystores, or signing passwords.
+
+## Project structure
+
+- `app/src/main/java/com/example/data/`: Room models, DAOs, and repositories
+- `app/src/main/java/com/example/ui/`: Compose screens, navigation, and view models
+- `app/src/main/java/com/example/util/`: import/export, location, authentication, and reports
+- `app/src/test/`: local and Robolectric tests
+- `gradle/`: version catalog and wrapper
+
+## Verification
+
+```sh
+./gradlew :app:testDebugUnitTest :app:lintDebug
+```
+
+For a device smoke test, open Guest Mode, add a vehicle and refill, check reports, export/import CSV, restart the app, and confirm persistence. Test location permission denial and offline operation. Test real sign-in and cloud backup only with your own Firebase configuration.
+
+## Release signing
+
+Set `KEYSTORE_PATH`, `STORE_PASSWORD`, and `KEY_PASSWORD` in your private build environment. The upload key alias is `upload`. Then run `./gradlew :app:bundleRelease`. Keep the signing key backed up privately. Production readiness also requires live data integration, backend access rules, API restrictions, and device testing.
+
+## Provenance
+
+Imported from the owner's CNG मित्र Android project. No new open-source license is granted by this repository cleanup.

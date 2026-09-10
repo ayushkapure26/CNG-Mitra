@@ -85,7 +85,7 @@ class FirestoreSyncHelper(
         } catch (e: Exception) {
             null
         }
-        return authUid ?: appPreferences.userId.ifBlank { "driver_offline_user" }
+        return authUid ?: throw IllegalStateException("Sign in before syncing cloud data.")
     }
 
     /**

@@ -90,95 +90,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val priceHistoryDao = db.priceHistoryDao()
                 val cachedSearchDao = db.cachedSearchDao()
 
-                // Check and Seed Cars if empty
-                if (carDao.getCarCount() == 0) {
-                    val defaultCarId = carDao.insertCar(
-                        Car(
-                            name = "Maruti WagonR CNG",
-                            regNumber = "DL 01 AB 1234",
-                            tankCapacityKg = 10.0,
-                            fuelType = "CNG + Petrol",
-                            currentOdometer = 28450.0,
-                            expectedMileage = 26.5,
-                            notes = "Daily commute vehicle",
-                            isDefault = true
-                        )
-                    )
-
-                    carDao.insertCar(
-                        Car(
-                            name = "Tata Tiago iCNG",
-                            regNumber = "MH 02 CD 5678",
-                            tankCapacityKg = 12.0,
-                            fuelType = "CNG + Petrol",
-                            currentOdometer = 14200.0,
-                            expectedMileage = 24.0,
-                            notes = "Family car",
-                            isDefault = false
-                        )
-                    )
-
-                    // Seed Sample Refills for Car 1 if refills empty
-                    if (refillDao.getRefillCount() == 0) {
-                        val now = System.currentTimeMillis()
-                        val dayMs = 86400000L
-
-                        val refill1 = Refill(
-                            carId = defaultCarId,
-                            pumpId = 1L,
-                            pumpName = "IGL CNG Station - Ring Road Connaught Place",
-                            date = now - (15 * dayMs),
-                            timeFormatted = "08:30 AM",
-                            odometer = 27800.0,
-                            quantityKg = 8.5,
-                            pricePerKg = 75.59,
-                            totalAmount = 642.51,
-                            isFullRefill = true,
-                            notes = "Morning fill, quick line",
-                            distanceTravelled = 220.0,
-                            mileageKmPerKg = 25.88,
-                            costPerKm = 2.92
-                        )
-
-                        val refill2 = Refill(
-                            carId = defaultCarId,
-                            pumpId = 1L,
-                            pumpName = "IGL CNG Station - Ring Road Connaught Place",
-                            date = now - (7 * dayMs),
-                            timeFormatted = "06:15 PM",
-                            odometer = 28120.0,
-                            quantityKg = 9.2,
-                            pricePerKg = 75.59,
-                            totalAmount = 695.42,
-                            isFullRefill = true,
-                            notes = "High pressure 220 bar",
-                            distanceTravelled = 320.0,
-                            mileageKmPerKg = 34.78,
-                            costPerKm = 2.17
-                        )
-
-                        val refill3 = Refill(
-                            carId = defaultCarId,
-                            pumpId = 2L,
-                            pumpName = "MGL CNG Pump - Bandra Kurla Complex",
-                            date = now - (2 * dayMs),
-                            timeFormatted = "09:45 AM",
-                            odometer = 28450.0,
-                            quantityKg = 8.8,
-                            pricePerKg = 76.00,
-                            totalAmount = 668.80,
-                            isFullRefill = true,
-                            notes = "Highway trip fill up",
-                            distanceTravelled = 330.0,
-                            mileageKmPerKg = 37.50,
-                            costPerKm = 2.02
-                        )
-
-                        refillDao.insertRefill(refill1)
-                        refillDao.insertRefill(refill2)
-                        refillDao.insertRefill(refill3)
-                    }
-                }
+                // Personal vehicles and expenses start empty.
 
                 // Check and Seed Pumps if empty
                 if (pumpDao.getPumpCount() == 0) {
@@ -204,7 +116,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 84,
                             phone = "+91 11 2345 6789",
                             isFavorite = true,
-                            dataSourceType = "Live Community Feed"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 2,
@@ -227,7 +139,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 120,
                             phone = "+91 22 6789 0123",
                             isFavorite = true,
-                            dataSourceType = "Live Community Feed"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 3,
@@ -250,7 +162,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 56,
                             phone = "+91 20 8765 4321",
                             isFavorite = false,
-                            dataSourceType = "Driver Verified"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 4,
@@ -273,7 +185,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 62,
                             phone = "+91 79 4567 8901",
                             isFavorite = false,
-                            dataSourceType = "Live Community Feed"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 5,
@@ -296,7 +208,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 38,
                             phone = "+91 80 1234 5678",
                             isFavorite = false,
-                            dataSourceType = "Community Alert: Pump Dry"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 6,
@@ -319,7 +231,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 45,
                             phone = "+91 141 234 5678",
                             isFavorite = false,
-                            dataSourceType = "Driver Verified"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 7,
@@ -342,7 +254,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 78,
                             phone = "+91 261 245 6789",
                             isFavorite = true,
-                            dataSourceType = "Live Community Feed"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 8,
@@ -365,7 +277,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 39,
                             phone = "+91 253 234 5678",
                             isFavorite = false,
-                            dataSourceType = "Awaiting Driver Verification"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 9,
@@ -388,7 +300,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 52,
                             phone = "+91 731 456 7890",
                             isFavorite = false,
-                            dataSourceType = "Live Community Feed"
+                            dataSourceType = "Sample data - verify at pump"
                         ),
                         Pump(
                             id = 10,
@@ -411,7 +323,7 @@ abstract class AppDatabase : RoomDatabase() {
                             ratingCount = 110,
                             phone = "+91 124 234 5678",
                             isFavorite = true,
-                            dataSourceType = "High Pressure Highway Hub"
+                            dataSourceType = "Sample data - verify at pump"
                         )
                     )
                     pumpDao.insertAll(samplePumps)

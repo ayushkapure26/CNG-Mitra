@@ -132,13 +132,14 @@ class FirestoreSyncRepositoryImpl(
     override val syncState: StateFlow<CloudSyncState> = _syncState.asStateFlow()
 
     private fun getEffectiveUserId(userIdParam: String?): String {
-        if (!userIdParam.isNullOrBlank()) return userIdParam
         val authUid = try {
             FirebaseAuth.getInstance().currentUser?.uid
         } catch (_: Exception) {
             null
         }
-        return authUid ?: appPreferences.userId.ifBlank { "driver_guest_mode" }
+        val uid = authUid ?: throw IllegalStateException("Sign in before syncing cloud data.")
+        require(userIdParam.isNullOrBlank() || userIdParam == uid) { "Cloud account does not match the signed-in user." }
+        return uid
     }
 
     override suspend fun syncAllUserDataToCloud(userId: String?): Result<SyncSummary> = withContext(Dispatchers.IO) {
@@ -546,19 +547,18 @@ class FirestoreSyncRepositoryImpl(
         val firestore = firestoreProvider() ?: return@withContext Result.failure(IllegalStateException("Firestore is unavailable"))
         try {
             val start = System.currentTimeMillis()
-            firestore.collection("system_health").document("ping").set(
-                mapOf("ping" to start, "service" to "FirestoreSyncRepository"),
-                SetOptions.merge()
-            ).await()
+            val uid = getEffectiveUserId(null)
+            firestore.collection(COLLECTION_USERS).document(uid)
+                .get(com.google.firebase.firestore.Source.SERVER).await()
             val latency = System.currentTimeMillis() - start
             val msg = "Firestore Cloud Backup is active (${latency}ms latency)."
             _syncState.value = _syncState.value.copy(lastSyncMessage = msg, isSuccess = true, errorMessage = null)
             Result.success(msg)
         } catch (e: Exception) {
             Log.e(TAG, "Ping failed", e)
-            val msg = "Firestore service is active in offline-caching mode: ${e.localizedMessage}"
-            _syncState.value = _syncState.value.copy(lastSyncMessage = msg, isSuccess = true)
-            Result.success(msg)
+            val msg = "Cloud connection failed: ${e.localizedMessage}"
+            _syncState.value = _syncState.value.copy(lastSyncMessage = msg, isSuccess = false, errorMessage = msg)
+            Result.failure(e)
         }
     }
 
@@ -572,8 +572,10 @@ class FirestoreSyncRepositoryImpl(
     ): Result<Unit> = withContext(Dispatchers.IO) {
         val firestore = firestoreProvider() ?: return@withContext Result.failure(IllegalStateException("Firestore unavailable"))
         try {
+            val reporterUid = getEffectiveUserId(null)
             val docRef = firestore.collection(COLLECTION_LIVE_STATUS).document("pump_$pumpId")
             val data = hashMapOf(
+                "reporterUid" to reporterUid,
                 "pumpId" to pumpId,
                 "stockStatus" to stockStatus,
                 "gasPressureBar" to pressureBar,
@@ -594,9 +596,11 @@ class FirestoreSyncRepositoryImpl(
     override suspend fun pushPumpRating(rating: PumpRating): Result<Unit> = withContext(Dispatchers.IO) {
         val firestore = firestoreProvider() ?: return@withContext Result.failure(IllegalStateException("Firestore unavailable"))
         try {
+            val reporterUid = getEffectiveUserId(null)
             val docId = "rating_${rating.pumpId}_${System.currentTimeMillis()}"
             val docRef = firestore.collection(COLLECTION_RATINGS).document(docId)
             val data = hashMapOf(
+                "reporterUid" to reporterUid,
                 "pumpId" to rating.pumpId,
                 "userName" to rating.userName,
                 "overallRating" to rating.overallRating,

@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    match /users/{uid}/{document=**} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+    match /cng_live_status/{pump} {
+      allow read: if true;
+      allow create, update: if signedIn()
+        && request.resource.data.reporterUid == request.auth.uid
+        && request.resource.data.gasPressureBar is number
+        && request.resource.data.gasPressureBar >= 0
+        && request.resource.data.gasPressureBar <= 350
+        && request.resource.data.queueWaitMinutes is int
+        && request.resource.data.queueWaitMinutes >= 0
+        && request.resource.data.queueWaitMinutes <= 1440;
+    }
+    match /cng_pump_ratings/{rating} {
+      allow read: if true;
+      allow create: if signedIn()
+        && request.resource.data.reporterUid == request.auth.uid
+        && request.resource.data.overallRating is number
+        && request.resource.data.overallRating >= 1
+        && request.resource.data.overallRating <= 5;
+      allow delete: if signedIn() && resource.data.reporterUid == request.auth.uid;
+    }
+  }
+}

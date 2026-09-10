@@ -122,7 +122,7 @@ class CngRepository(
                 isGasAvailable = isGasAvailable,
                 isOpen = isGasAvailable,
                 reportedByDriver = "Driver $reporterName (Just now)",
-                dataSourceType = "Live Community Verified",
+                dataSourceType = "Driver report - unverified",
                 lastUpdatedTime = System.currentTimeMillis()
             )
             pumpDao.updatePump(updated)

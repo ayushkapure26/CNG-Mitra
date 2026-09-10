@@ -91,14 +91,7 @@ class FirebaseAuthManager {
 
         val firebaseAuth = auth
         if (firebaseAuth == null) {
-            val fallbackName = trimmedEmail.substringBefore("@").replace(".", " ").replaceFirstChar { it.uppercase() }
-            val fallbackUser = AuthUser(
-                uid = "offline_" + System.currentTimeMillis(),
-                email = trimmedEmail,
-                displayName = fallbackName,
-                provider = "password"
-            )
-            return AuthResult.Success(fallbackUser, "Signed in successfully (Offline Mode)")
+            return AuthResult.Error("Sign-in is unavailable. Please continue in Guest Mode.")
         }
 
         return try {
@@ -154,14 +147,7 @@ class FirebaseAuthManager {
 
         val firebaseAuth = auth
         if (firebaseAuth == null) {
-            val fallbackUser = AuthUser(
-                uid = "offline_" + System.currentTimeMillis(),
-                email = trimmedEmail,
-                displayName = trimmedName,
-                phone = phone,
-                provider = "password"
-            )
-            return AuthResult.Success(fallbackUser, "Account created successfully!")
+            return AuthResult.Error("Account creation is unavailable. Please continue in Guest Mode.")
         }
 
         return try {
@@ -216,15 +202,7 @@ class FirebaseAuthManager {
         }
 
         if (serverClientId.isNullOrBlank() || firebaseAuth == null) {
-            // Friendly fallback if Google Client ID is not configured yet in google-services.json
-            val demoUser = AuthUser(
-                uid = "google_driver_" + System.currentTimeMillis(),
-                email = "aayushkapure506@gmail.com",
-                displayName = "Aayush Kapure",
-                provider = "google"
-            )
-            saveUserToFirestore(demoUser)
-            return AuthResult.Success(demoUser, "Signed in with Google as ${demoUser.displayName}!")
+            return AuthResult.Error("Google sign-in is not configured. Please continue in Guest Mode.")
         }
 
         return try {
@@ -274,24 +252,10 @@ class FirebaseAuthManager {
             AuthResult.Error("Google sign-in was cancelled.")
         } catch (e: NoCredentialException) {
             Log.w(tag, "No Google credentials found on device", e)
-            val demoUser = AuthUser(
-                uid = "google_user_" + System.currentTimeMillis(),
-                email = "aayushkapure506@gmail.com",
-                displayName = "Aayush Kapure",
-                provider = "google"
-            )
-            saveUserToFirestore(demoUser)
-            AuthResult.Success(demoUser, "Signed in with Google Account (Aayush Kapure)")
+            AuthResult.Error("No Google account was available. Please add an account or use email sign-in.")
         } catch (e: GetCredentialException) {
             Log.e(tag, "CredentialManager error", e)
-            val demoUser = AuthUser(
-                uid = "google_user_" + System.currentTimeMillis(),
-                email = "aayushkapure506@gmail.com",
-                displayName = "Aayush Kapure",
-                provider = "google"
-            )
-            saveUserToFirestore(demoUser)
-            AuthResult.Success(demoUser, "Signed in with Google Account (${demoUser.displayName})")
+            AuthResult.Error("Google sign-in failed. Please try again or use email sign-in.")
         } catch (e: Exception) {
             Log.e(tag, "Google sign in general error", e)
             AuthResult.Error(e.localizedMessage ?: "Google Sign-in failed. Please try Email/Password.")
@@ -306,7 +270,7 @@ class FirebaseAuthManager {
         if (trimmed.isBlank() || !trimmed.contains("@")) {
             return Result.failure(IllegalArgumentException("Please enter a valid email address."))
         }
-        val firebaseAuth = auth ?: return Result.success("Password reset instructions sent to $trimmed (Demo mode).")
+        val firebaseAuth = auth ?: return Result.failure(IllegalStateException("Password reset is unavailable until sign-in is configured."))
         return try {
             firebaseAuth.sendPasswordResetEmail(trimmed).await()
             Result.success("Password reset instructions sent to $trimmed. Please check your inbox.")
