@@ -24,6 +24,6 @@ class GreetingScreenshotTest {
   fun greeting_screenshot() {
     composeTestRule.setContent { CNGTrackTheme { Text("CNGमित्र") } }
 
-    composeTestRule.onRoot().captureRoboImage(filePath = "src/test/screenshots/greeting.png")
+    composeTestRule.onRoot().captureRoboImage(filePath = "build/outputs/screenshots/greeting.png")
   }
 }

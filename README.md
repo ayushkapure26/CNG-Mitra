@@ -4,7 +4,7 @@ Android companion for CNG drivers: vehicle records, refill diary, mileage and ex
 
 ## Build
 
-Use JDK 17 and Android Studio with SDK platform **Android 36.1** and Build Tools **36.0.0**. The repository includes the Gradle 9.3.1 wrapper, matching Android Gradle Plugin 9.1.1.
+Use JDK 21 and Android Studio with SDK platform **Android 36.1** and Build Tools **36.0.0**. Android 36 Robolectric tests require Java 21. The repository includes the Gradle 9.3.1 wrapper, matching Android Gradle Plugin 9.1.1.
 
 ```sh
 git clone https://github.com/ayushkapure26/CNG-Mitra.git

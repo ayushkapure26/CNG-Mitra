@@ -91,7 +91,6 @@ import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material.icons.filled.ViewList
 import androidx.compose.ui.platform.LocalContext
 import com.example.ui.components.CngGoogleMapView
-import com.example.ui.components.CngMapCanvas
 
 @Composable
 fun PumpFinderScreen(
@@ -121,6 +120,12 @@ fun PumpFinderScreen(
             .fillMaxSize()
             .padding(horizontal = 16.dp)
     ) {
+        Text(
+            text = "Sample stations and unverified driver reports. Confirm price and availability at the pump.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 8.dp)
+        )
         Spacer(modifier = Modifier.height(12.dp))
 
         // Top Search & Auto-complete Bar
