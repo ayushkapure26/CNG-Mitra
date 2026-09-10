@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+<title id="title">ayushkapure26 — Building for everyday life</title>
+<desc id="desc">Computer Engineering student building practical Android apps. Featured project: CNG Mitra.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#103931"/></linearGradient></defs>
+<rect width="1200" height="340" rx="24" fill="url(#bg)"/>
+<circle cx="1090" cy="65" r="190" fill="none" stroke="#52e5b5" stroke-opacity=".13" stroke-width="2"/>
+<circle cx="1090" cy="65" r="135" fill="none" stroke="#52e5b5" stroke-opacity=".13" stroke-width="2"/>
+<rect x="52" y="48" width="5" height="25" rx="2" fill="#67edba"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="72" y="67" font-size="17" fill="#67edba" letter-spacing="3">AYUSHKAPURE26</text>
+<text x="52" y="143" font-size="48" font-weight="700" fill="#f3faf7">Building for everyday life.</text>
+<text x="54" y="190" font-size="21" fill="#b6ccc7">Computer Engineering student · Practical Android apps</text>
+<rect x="52" y="237" width="99" height="38" rx="19" fill="#203e3b"/>
+<text x="77" y="262" font-size="15" fill="#dafff0">Kotlin</text>
+<rect x="163" y="237" width="179" height="38" rx="19" fill="#203e3b"/>
+<text x="185" y="262" font-size="15" fill="#dafff0">Jetpack Compose</text>
+<rect x="354" y="237" width="167" height="38" rx="19" fill="#203e3b"/>
+<text x="375" y="262" font-size="15" fill="#dafff0">GitHub Actions</text>
+<text x="951" y="276" font-size="14" fill="#8baea3" letter-spacing="2">IDEA → APP</text>
+</g></svg>
