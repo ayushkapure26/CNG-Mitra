@@ -1,6 +1,26 @@
 # CNG मित्र
+### Your CNG refill diary, mileage tracker, and expense companion
 
-Android companion for CNG drivers: vehicle records, refill diary, mileage and expense reports, pump discovery, and optional cloud backup.
+[![Android build](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml)
+
+**Kotlin · Jetpack Compose · Room · Android**
+
+[Get a debug APK](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml) · [Build locally](#build) · [Service setup](#features-and-service-setup)
+
+Keep vehicle records, log CNG refills, and understand fuel expenses in one place. Guest Mode keeps the personal diary available offline; cloud backup and online services are optional.
+
+## At a glance
+
+| Feature | What it helps you do |
+| --- | --- |
+| Vehicle manager | Organize vehicles and odometer records |
+| Refill diary | Record fuel quantity, price, and spending |
+| Mileage & reports | Review fuel economy and expenses |
+| Import & export | Move records through CSV |
+| Station discovery | Browse sample stations and unverified driver reports |
+| Offline Guest Mode | Use local features without creating an account |
+
+**Project status:** Debug APK builds, unit tests, and lint have passed in GitHub Actions. This is a development app; station information is not a verified live feed.
 
 ## Build
 
