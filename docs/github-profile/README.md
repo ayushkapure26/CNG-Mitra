@@ -1,32 +1,54 @@
-# Hi, I'm @ayushkapure26 👋
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayushkapure26/CNG-Mitra/main/docs/github-profile/banner.svg" alt="ayushkapure26 — Building for everyday life. Computer Engineering student building practical Android apps." width="100%" />
+</p>
 
-### Computer Engineering student · Building practical Android apps
+<p align="center">
+  <a href="https://github.com/ayushkapure26/CNG-Mitra"><strong>Explore my project</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml"><strong>Builds &amp; APK downloads</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/ayushkapure26/CNG-Mitra/issues"><strong>Project feedback</strong></a>
+</p>
 
-I'm developing **CNG मित्र**, an Android companion that helps CNG drivers keep track of vehicles, refills, mileage, and fuel expenses.
+## A little about me
 
-I enjoy turning everyday problems into useful software and improving my projects through testing, clear documentation, and iteration.
+I'm a **Computer Engineering student** developing Android apps around everyday needs. My current focus is **CNG मित्र**: helping drivers keep useful records of their vehicles, refills, mileage, and expenses.
 
-## Featured project
+I’m learning by building, testing, and improving a working project—from Compose screens to local data storage and automated builds.
 
-### [CNG मित्र](https://github.com/ayushkapure26/CNG-Mitra)
+## Featured build · CNG मित्र
 
-A driver-focused app with a refill diary, expense reports, station discovery, and offline Guest Mode.
+**Know your refills. Understand your fuel spending.**
 
-- **Android:** Kotlin and Jetpack Compose
-- **Local data:** Room and Kotlin coroutines
-- **Optional integrations:** Firebase, Google Maps, and Gemini
-- **Quality checks:** automated APK builds, unit tests, and Android lint
+An Android companion for CNG drivers, built with **Kotlin, Jetpack Compose, and Room**.
 
-[Explore the code](https://github.com/ayushkapure26/CNG-Mitra) · [Builds & APK downloads](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml)
+| Keep track | Understand | Stay in control |
+| :--- | :--- | :--- |
+| Vehicle and odometer records | Mileage and expense reports | Offline Guest Mode |
+| Fuel quantity and refill cost | Fuel spending over time | CSV import and export |
 
-*Station data is currently sample or community-reported; online integrations require configuration.*
+[![Android build](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml)
 
-## What I'm working on
+**[View source →](https://github.com/ayushkapure26/CNG-Mitra)** &nbsp; **[Try a debug build →](https://github.com/ayushkapure26/CNG-Mitra/actions/workflows/android.yml)**
 
-- Making Android interfaces easier to use
-- Strengthening testing and reliable local data storage
-- Learning better ways to build and maintain useful applications
+<details>
+<summary><strong>Behind the app: architecture and quality checks</strong></summary>
 
-## Technologies in my current project
+- **Interface:** Jetpack Compose screens and view models
+- **Persistence:** Room database and Kotlin coroutines
+- **Optional services:** Firebase, Google Maps, and Gemini
+- **Verification:** GitHub Actions runs APK assembly, unit tests, and Android lint
 
-Kotlin · Jetpack Compose · Room · Firebase · Git · GitHub Actions
+This is a development project. Station information is sample or community-reported, and online integrations require configuration.
+
+</details>
+
+## What I'm sharpening
+
+**Android development** · **Usable interfaces** · **Testing** · **Reliable data storage**
+
+I want each iteration to make the app easier to understand, more useful, and more dependable.
+
+---
+
+<p align="center"><sub>Explore the code, try a build, or share a project suggestion.</sub></p>
