@@ -1,20 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
-<title id="title">ayushkapure26 — Building for everyday life</title>
-<desc id="desc">Computer Engineering student building practical Android apps. Featured project: CNG Mitra.</desc>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#103931"/></linearGradient></defs>
-<rect width="1200" height="340" rx="24" fill="url(#bg)"/>
-<circle cx="1090" cy="65" r="190" fill="none" stroke="#52e5b5" stroke-opacity=".13" stroke-width="2"/>
-<circle cx="1090" cy="65" r="135" fill="none" stroke="#52e5b5" stroke-opacity=".13" stroke-width="2"/>
-<rect x="52" y="48" width="5" height="25" rx="2" fill="#67edba"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+<title id="title">Ayush Kapure | Android developer portfolio</title>
+<desc id="desc">Computer Engineering student. Building useful apps, one improvement at a time. Kotlin, Compose, Room. Featured project: CNG Mitra.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#080d19"/><stop offset="1" stop-color="#172238"/></linearGradient><linearGradient id="accent"><stop stop-color="#62e4dc"/><stop offset="1" stop-color="#9a8cff"/></linearGradient></defs>
+<rect width="1200" height="400" rx="24" fill="url(#bg)"/>
+<path d="M780 0v400M860 0v400M940 0v400M1020 0v400M1100 0v400M780 80h420M780 160h420M780 240h420M780 320h420" stroke="#29364e" opacity=".45"/>
+<rect x="54" y="48" width="38" height="4" rx="2" fill="url(#accent)"/>
 <g font-family="Arial, Helvetica, sans-serif">
-<text x="72" y="67" font-size="17" fill="#67edba" letter-spacing="3">AYUSHKAPURE26</text>
-<text x="52" y="143" font-size="48" font-weight="700" fill="#f3faf7">Building for everyday life.</text>
-<text x="54" y="190" font-size="21" fill="#b6ccc7">Computer Engineering student · Practical Android apps</text>
-<rect x="52" y="237" width="99" height="38" rx="19" fill="#203e3b"/>
-<text x="77" y="262" font-size="15" fill="#dafff0">Kotlin</text>
-<rect x="163" y="237" width="179" height="38" rx="19" fill="#203e3b"/>
-<text x="185" y="262" font-size="15" fill="#dafff0">Jetpack Compose</text>
-<rect x="354" y="237" width="167" height="38" rx="19" fill="#203e3b"/>
-<text x="375" y="262" font-size="15" fill="#dafff0">GitHub Actions</text>
-<text x="951" y="276" font-size="14" fill="#8baea3" letter-spacing="2">IDEA → APP</text>
+<text x="54" y="92" fill="#78dfdb" font-size="16" letter-spacing="3">COMPUTER ENGINEERING · ANDROID</text>
+<text x="50" y="163" fill="#f4f7ff" font-size="62" font-weight="700">Ayush Kapure</text>
+<text x="54" y="212" fill="#c0cbe0" font-size="24">Building useful apps.</text>
+<text x="54" y="249" fill="#93a3bd" font-size="21">One improvement at a time.</text>
+<rect x="54" y="292" width="98" height="36" rx="9" fill="#213047"/><text x="76" y="316" fill="#d9e7fc" font-size="16">Kotlin</text>
+<rect x="164" y="292" width="124" height="36" rx="9" fill="#213047"/><text x="184" y="316" fill="#d9e7fc" font-size="16">Compose</text>
+<rect x="300" y="292" width="94" height="36" rx="9" fill="#213047"/><text x="322" y="316" fill="#d9e7fc" font-size="16">Room</text>
+<rect x="815" y="88" width="320" height="229" rx="16" fill="#101a2c" stroke="#3c4d6b"/>
+<circle cx="839" cy="112" r="4" fill="#78dfdb"/><circle cx="855" cy="112" r="4" fill="#9a8cff"/><circle cx="871" cy="112" r="4" fill="#526581"/>
+<text x="841" y="160" fill="#93a3bd" font-size="13" letter-spacing="2">FEATURED PROJECT</text>
+<text x="839" y="205" fill="#f4f7ff" font-size="32" font-weight="700">CNG Mitra</text>
+<text x="841" y="242" fill="#becbe0" font-size="16">Refills. Mileage. Expenses.</text>
+<text x="841" y="283" fill="#78dfdb" font-size="14">KOTLIN / JETPACK COMPOSE</text>
+<text x="54" y="372" fill="#6e809e" font-size="14">github.com/ayushkapure26</text>
 </g></svg>
