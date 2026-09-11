@@ -1,58 +1,34 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ayushkapure26/Ayush_project/main/docs/github-profile/banner.svg" alt="ayushkapure26 — Building for everyday life. Computer Engineering student building practical Android apps." width="100%" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/ayushkapure26/Ayush_project"><strong>Explore my project</strong></a>
-  &nbsp; · &nbsp;
-  <a href="https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml"><strong>Builds &amp; APK downloads</strong></a>
-  &nbsp; · &nbsp;
-  <a href="https://github.com/ayushkapure26/Ayush_project/issues"><strong>Project feedback</strong></a>
-</p>
-
-## A little about me
-
-I'm a **Computer Engineering student** developing Android apps around everyday needs. My current focus is **CNG मित्र**: helping drivers keep useful records of their vehicles, refills, mileage, and expenses.
-
-I’m learning by building, testing, and improving a working project—from Compose screens to local data storage and automated builds.
-
-## Featured build · CNG मित्र
+# CNG मित्र
 
 **Know your refills. Understand your fuel spending.**
 
-An Android companion for CNG drivers, built with **Kotlin, Jetpack Compose, and Room**.
+An Android companion for CNG drivers, built by [Ayush Kapure](https://github.com/ayushkapure26) with Kotlin, Jetpack Compose, and Room.
 
-| Keep track | Understand | Stay in control |
-| :--- | :--- | :--- |
-| Vehicle and odometer records | Mileage and expense reports | Offline Guest Mode |
-| Fuel quantity and refill cost | Fuel spending over time | CSV import and export |
+[![Android build](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml)
 
-[![Android build](https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml)
+## What you can do
 
-**[View source →](https://github.com/ayushkapure26/Ayush_project)** &nbsp; **[Try a debug build →](https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml)**
+| Feature | Purpose |
+| :--- | :--- |
+| Vehicle diary | Keep vehicle and odometer records together |
+| Refill tracking | Record fuel quantity and cost |
+| Reports | Review mileage and fuel expenses |
+| Guest Mode | Use local records without signing in |
+| CSV import and export | Move your records between files and the app |
 
-<details>
-<summary><strong>Behind the app: architecture and quality checks</strong></summary>
+## Try the app
 
-- **Interface:** Jetpack Compose screens and view models
-- **Persistence:** Room database and Kotlin coroutines
-- **Optional services:** Firebase, Google Maps, and Gemini
-- **Verification:** GitHub Actions runs APK assembly, unit tests, and Android lint
+Open [Android builds](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml), select a successful run on `main`, and download **CNG-Mitra-debug-apk** from Artifacts. Sign in to GitHub to download, extract the ZIP, and install the APK on an Android device.
 
-This is a development project. Station information is sample or community-reported, and online integrations require configuration.
+[Verified successful build — 10 September 2026](https://github.com/ayushkapure26/Ayush_prmm/actions/runs/34488467187): APK assembly, unit tests, and lint passed; the debug APK artifact is available. Artifacts expire, so prefer the latest successful run.
 
-</details>
+This is a development APK. Station information is sample or community-reported; online integrations need configuration. Device testing is still needed before a production release.
 
-## What I'm sharpening
+## Built with
 
-**Android development** · **Usable interfaces** · **Testing** · **Reliable data storage**
+**Kotlin · Jetpack Compose · Room · Coroutines · GitHub Actions**
 
-I want each iteration to make the app easier to understand, more useful, and more dependable.
-
----
-
-<p align="center"><sub>Explore the code, try a build, or share a project suggestion.</sub></p>
-
+Optional integrations: Firebase authentication and backup, Google Maps, and Gemini.
 
 ## Build and run CNG मित्र
 
@@ -64,8 +40,8 @@ I want each iteration to make the app easier to understand, more useful, and mor
 Use JDK 21 and Android Studio with SDK platform **Android 36.1** and Build Tools **36.0.0**. Android 36 Robolectric tests require Java 21. The repository includes the Gradle 9.3.1 wrapper, matching Android Gradle Plugin 9.1.1.
 
 ```sh
-git clone https://github.com/ayushkapure26/Ayush_project.git
-cd Ayush_project
+git clone https://github.com/ayushkapure26/Ayush_prmm.git
+cd Ayush_prmm
 ./gradlew :app:assembleDebug :app:testDebugUnitTest
 ```
 
