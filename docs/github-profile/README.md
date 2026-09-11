@@ -1,54 +1,59 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayushkapure26/Ayush_prmm/main/docs/github-profile/banner.svg" alt="ayushkapure26 — Building for everyday life. Computer Engineering student building practical Android apps." width="100%" />
+<img src="https://raw.githubusercontent.com/ayushkapure26/Ayush_prmm/main/docs/github-profile/banner.svg" alt="Ayush Kapure — Building useful Android apps, one improvement at a time." width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/ayushkapure26/Ayush_prmm"><strong>Explore my project</strong></a>
-  &nbsp; · &nbsp;
-  <a href="https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml"><strong>Builds &amp; APK downloads</strong></a>
-  &nbsp; · &nbsp;
-  <a href="https://github.com/ayushkapure26/Ayush_prmm/issues"><strong>Project feedback</strong></a>
+<strong>Computer Engineering student · Android development · Learning through projects</strong>
 </p>
 
-## A little about me
+<p align="center">
+<a href="https://github.com/ayushkapure26/Ayush_prmm">Featured project</a> ·
+<a href="https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml">Builds &amp; APK</a> ·
+<a href="https://github.com/ayushkapure26/Ayush_prmm/commits/main/">Development activity</a>
+</p>
 
-I'm a **Computer Engineering student** developing Android apps around everyday needs. My current focus is **CNG मित्र**: helping drivers keep useful records of their vehicles, refills, mileage, and expenses.
+## Hi, I'm Ayush
 
-I’m learning by building, testing, and improving a working project—from Compose screens to local data storage and automated builds.
+I build Android apps around everyday problems. My current project, **CNG मित्र**, helps drivers keep track of refills, mileage, and fuel spending.
 
-## Featured build · CNG मित्र
+I'm developing my skills through the full process: designing screens, storing data, investigating failures, and improving the build.
 
-**Know your refills. Understand your fuel spending.**
+## Featured project — CNG मित्र
 
-An Android companion for CNG drivers, built with **Kotlin, Jetpack Compose, and Room**.
+**A practical fuel diary for CNG drivers.**
 
-| Keep track | Understand | Stay in control |
-| :--- | :--- | :--- |
-| Vehicle and odometer records | Mileage and expense reports | Offline Guest Mode |
-| Fuel quantity and refill cost | Fuel spending over time | CSV import and export |
+| In the app | Behind the scenes |
+| :--- | :--- |
+| Vehicle and refill records | Kotlin and Jetpack Compose |
+| Mileage and expense reports | Room and coroutines |
+| Offline Guest Mode | Local data storage |
+| CSV import and export | Data portability |
+| Automated build checks | GitHub Actions, unit tests, Android lint |
 
 [![Android build](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml)
 
-**[View source →](https://github.com/ayushkapure26/Ayush_prmm)** &nbsp; **[Try a debug build →](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml)**
+**[Explore the source →](https://github.com/ayushkapure26/Ayush_prmm)** · **[Find a debug APK →](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml)**
 
-<details>
-<summary><strong>Behind the app: architecture and quality checks</strong></summary>
+Development project: station information is sample or community-reported. Online services require configuration.
 
-- **Interface:** Jetpack Compose screens and view models
-- **Persistence:** Room database and Kotlin coroutines
-- **Optional services:** Firebase, Google Maps, and Gemini
-- **Verification:** GitHub Actions runs APK assembly, unit tests, and Android lint
+## My project toolkit
 
-This is a development project. Station information is sample or community-reported, and online integrations require configuration.
+**Kotlin · Jetpack Compose · Room · Coroutines · Git · GitHub Actions**
 
-</details>
+Project integrations: Firebase, Google Maps, and Gemini.
 
-## What I'm sharpening
+## Currently exploring
 
-**Android development** · **Usable interfaces** · **Testing** · **Reliable data storage**
+- Making offline workflows easier to use.
+- Understanding Android testing and build reliability.
+- Improving the way apps present useful data.
 
-I want each iteration to make the app easier to understand, more useful, and more dependable.
+## Progress you can inspect
+
+- **Build reliability:** Android SDK 36 Robolectric tests require Java 21; the workflow now uses it. [Successful verification](https://github.com/ayushkapure26/Ayush_prmm/actions/runs/34488467187).
+- **Project documentation:** features, setup instructions, and debug APK download steps are available in the project README.
+- **Ongoing development:** [commits](https://github.com/ayushkapure26/Ayush_prmm/commits/main/) and [workflow runs](https://github.com/ayushkapure26/Ayush_prmm/actions) show the actual work and its checks.
 
 ---
 
-<p align="center"><sub>Explore the code, try a build, or share a project suggestion.</sub></p>
+<p align="center"><sub>Useful projects. Clear code. Steady learning.</sub></p>
