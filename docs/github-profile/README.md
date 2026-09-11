@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayushkapure26/Ayush_project/main/docs/github-profile/banner.svg" alt="ayushkapure26 — Building for everyday life. Computer Engineering student building practical Android apps." width="100%" />
+  <img src="https://raw.githubusercontent.com/ayushkapure26/Ayush_prmm/main/docs/github-profile/banner.svg" alt="ayushkapure26 — Building for everyday life. Computer Engineering student building practical Android apps." width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/ayushkapure26/Ayush_project"><strong>Explore my project</strong></a>
+  <a href="https://github.com/ayushkapure26/Ayush_prmm"><strong>Explore my project</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml"><strong>Builds &amp; APK downloads</strong></a>
+  <a href="https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml"><strong>Builds &amp; APK downloads</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://github.com/ayushkapure26/Ayush_project/issues"><strong>Project feedback</strong></a>
+  <a href="https://github.com/ayushkapure26/Ayush_prmm/issues"><strong>Project feedback</strong></a>
 </p>
 
 ## A little about me
@@ -27,9 +27,9 @@ An Android companion for CNG drivers, built with **Kotlin, Jetpack Compose, and 
 | Vehicle and odometer records | Mileage and expense reports | Offline Guest Mode |
 | Fuel quantity and refill cost | Fuel spending over time | CSV import and export |
 
-[![Android build](https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml)
+[![Android build](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml/badge.svg)](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml)
 
-**[View source →](https://github.com/ayushkapure26/Ayush_project)** &nbsp; **[Try a debug build →](https://github.com/ayushkapure26/Ayush_project/actions/workflows/android.yml)**
+**[View source →](https://github.com/ayushkapure26/Ayush_prmm)** &nbsp; **[Try a debug build →](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml)**
 
 <details>
 <summary><strong>Behind the app: architecture and quality checks</strong></summary>
